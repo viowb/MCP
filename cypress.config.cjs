@@ -2,9 +2,9 @@ const { defineConfig } = require('cypress');
 
 module.exports = defineConfig({
   e2e: {
-    baseUrl: 'https://rahulshettyacademy.com',
+    // No global baseUrl — tests use full URLs to support multiple targets
     specPattern: 'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}',
-    supportFile: false,
+    supportFile: 'cypress/support/e2e.js',
     setupNodeEvents(on, config) {
       return config;
     },
